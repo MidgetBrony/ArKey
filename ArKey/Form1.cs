@@ -228,7 +228,7 @@ namespace ArKey
 
                 //int btnId = Convert.ToInt32(v.Substring(3, 2));
                 string[] btnInfo = v.Split('_');
-                int btnId = Convert.ToInt32(btnInfo[0].Remove(0,3));
+                int btnId = Convert.ToInt32(btnInfo[0].Remove(0, 3));
                 var GetButtonId = arkeyButtons.FirstOrDefault(a => a.ButtonID == btnId);
 
                 //var keys = (VirtualKeyCode)System.Enum.Parse(typeof(VirtualKeyCode), GetButtonId.ButtonAction);
@@ -352,12 +352,20 @@ namespace ArKey
                                 }));
                             }
                         }
-                    }
+                        if (GetButtonId.ButtonAction.Contains("Launch") && !profileChange && !v.Contains("up"))
+                        {
+                            string[] actionSeperator = GetButtonId.ButtonAction.Split(',');
+
+                            profileChange = true;
+
+                            System.Diagnostics.Process.Start(actionSeperator[1]);
+                        }
 
 
-                    if(v.Contains("up"))
-                    {
-                        profileChange = false;
+                        if (v.Contains("up"))
+                        {
+                            profileChange = false;
+                        }
                     }
                 }
             }
