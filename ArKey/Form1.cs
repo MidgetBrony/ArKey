@@ -238,7 +238,7 @@ namespace ArKey
                     if (!GetButtonId.ButtonAction.Contains("App:"))
                     {
 
-                        if (GetButtonId.ButtonSingle && !v.Contains("up") && !GetButtonId.Pressed && !GetButtonId.TypeMode)
+                        if (GetButtonId.ButtonSingle && !v.Contains("up") && !GetButtonId.Pressed && !GetButtonId.TypeMode && !GetButtonId.Multikey)
                         {
                             var keys = (VirtualKeyCode)System.Enum.Parse(typeof(VirtualKeyCode), GetButtonId.ButtonAction);
                             new InputSimulator().Keyboard.KeyPress(keys);
