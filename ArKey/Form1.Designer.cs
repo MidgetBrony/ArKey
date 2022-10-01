@@ -47,6 +47,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.AutoLaunchCheck = new System.Windows.Forms.CheckBox();
             this.AutoConnectCheck = new System.Windows.Forms.CheckBox();
+            this.button6 = new System.Windows.Forms.Button();
             this.ArkeyContextIcon.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +100,7 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(12, 131);
+            this.button3.Location = new System.Drawing.Point(12, 162);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(167, 23);
             this.button3.TabIndex = 5;
@@ -120,9 +121,9 @@
             // button5
             // 
             this.button5.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel);
-            this.button5.Location = new System.Drawing.Point(142, 160);
+            this.button5.Location = new System.Drawing.Point(134, 197);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(37, 43);
+            this.button5.Size = new System.Drawing.Size(43, 43);
             this.button5.TabIndex = 7;
             this.button5.Text = "↘";
             this.button5.UseVisualStyleBackColor = true;
@@ -180,7 +181,7 @@
             // AutoLaunchCheck
             // 
             this.AutoLaunchCheck.AutoSize = true;
-            this.AutoLaunchCheck.Location = new System.Drawing.Point(16, 164);
+            this.AutoLaunchCheck.Location = new System.Drawing.Point(12, 197);
             this.AutoLaunchCheck.Name = "AutoLaunchCheck";
             this.AutoLaunchCheck.Size = new System.Drawing.Size(87, 17);
             this.AutoLaunchCheck.TabIndex = 8;
@@ -191,18 +192,29 @@
             // AutoConnectCheck
             // 
             this.AutoConnectCheck.AutoSize = true;
-            this.AutoConnectCheck.Location = new System.Drawing.Point(16, 186);
+            this.AutoConnectCheck.Location = new System.Drawing.Point(12, 223);
             this.AutoConnectCheck.Name = "AutoConnectCheck";
             this.AutoConnectCheck.Size = new System.Drawing.Size(91, 17);
             this.AutoConnectCheck.TabIndex = 9;
             this.AutoConnectCheck.Text = "Auto Connect";
             this.AutoConnectCheck.UseVisualStyleBackColor = true;
             // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(12, 133);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(167, 23);
+            this.button6.TabIndex = 10;
+            this.button6.Text = "Delete Profile";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(189, 215);
+            this.ClientSize = new System.Drawing.Size(189, 252);
+            this.Controls.Add(this.button6);
             this.Controls.Add(this.AutoConnectCheck);
             this.Controls.Add(this.AutoLaunchCheck);
             this.Controls.Add(this.button5);
@@ -245,6 +257,7 @@
         private System.Windows.Forms.CheckBox AutoLaunchCheck;
         private System.Windows.Forms.CheckBox AutoConnectCheck;
         public System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Button button6;
     }
 }
 

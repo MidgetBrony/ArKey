@@ -532,5 +532,11 @@ namespace ArKey
                 button1.PerformClick();
             }
         }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            File.Delete(ProfilePath + "\\" + comboBox2.Text);
+            ReadProfiles();
+        }
     }
 }
