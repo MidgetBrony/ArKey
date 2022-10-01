@@ -17,7 +17,7 @@ namespace ArKey
     {
         public string ProfilePath { get; set; }
         public Form1 parForm { get; set; }
-        public NewProfileForm(string profilePath, Form1 form1)
+        public NewProfileForm(string profilePath, Form1 form1, int ButtonsAdd)
         {
             InitializeComponent();
 
@@ -27,6 +27,15 @@ namespace ArKey
             //LoadProfile(ProfilePath);
 
             data = new IniData();
+
+
+            for (int i = 1; i <= ButtonsAdd; i++)
+            {
+                data.Sections.AddSection("btn" + i);
+                ButtonEdit buttonEdit = new ButtonEdit();
+                buttonEdit.ButtonName = "btn" + i;
+                flowLayoutPanel1.Controls.Add(buttonEdit);
+            }
         }
 
         FileIniDataParser parser = new FileIniDataParser();

@@ -91,6 +91,7 @@ namespace ArKey
                     "[Settings]",
                     "Port=",
                     "Profile=",
+                    "NewProfileBTNS=12",
                     "AutoStart=False",
                     "AutoConnect=False"
 
@@ -444,6 +445,7 @@ namespace ArKey
                     "[Settings]",
                     "Port=",
                     "Profile=",
+                    "NewProfileBTNS=12",
                     "AutoStart=",
                     "AutoConnect"
 
@@ -493,7 +495,9 @@ namespace ArKey
 
         private void button3_Click(object sender, EventArgs e)
         {
-            NewProfileForm newProfileForm = new NewProfileForm("", this);
+            var parser = new FileIniDataParser();
+            IniData data = parser.ReadFile(Application.StartupPath + "//Settings.ini");
+            NewProfileForm newProfileForm = new NewProfileForm("", this, Convert.ToInt32(data["Settings"]["NewProfileBTNS"]));
             newProfileForm.ShowDialog();
         }
 
