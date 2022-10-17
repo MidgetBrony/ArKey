@@ -200,7 +200,7 @@ namespace ArKey
                         GC.Collect();
                     }
 
-                    port = new SerialPort(comboBox1.Text, 9600);
+                    port = new SerialPort(comboBox1.Text, 115200);
 
 
                     port.DataReceived += Port_DataReceived;
@@ -362,6 +362,22 @@ namespace ArKey
                             System.Diagnostics.Process.Start(actionSeperator[1]);
                         }
 
+                        if(GetButtonId.ButtonAction.Contains("Profile") && !profileChange && !v.Contains("up"))
+                        {
+                            string[] actionSeperator = GetButtonId.ButtonAction.Split(',');
+                            
+                            if (comboBox2.InvokeRequired)
+                            {
+                                Invoke(new Action(() =>
+                                {
+                                    comboBox2.Text = actionSeperator[1];
+                                    LoadProfile(ProfilePath + comboBox2.Text);
+                                    PopupNotificaiton(comboBox2.Text.Replace(".ini", ""));
+
+                                    profileChange = true;
+                                }));
+                            }
+                        }
 
                         if (v.Contains("up"))
                         {
